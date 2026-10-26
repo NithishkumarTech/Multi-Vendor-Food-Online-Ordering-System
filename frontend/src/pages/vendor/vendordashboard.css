@@ -1,0 +1,698 @@
+/* Yumora Vendor Dashboard */
+.vendor-dashboard {
+  --green: #079653;
+  --dark: #003b35;
+  --text: #101b46;
+  --muted: #64748b;
+  --border: #e1e7ef;
+
+  display: flex;
+  min-height: 100vh;
+  background: #f4f7fb;
+  color: var(--text);
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* Sidebar */
+.vendor-sidebar {
+  width: 245px;
+  min-width: 245px;
+  padding: 28px 16px;
+  background: linear-gradient(160deg, #00483c, #001e2a);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.vendor-logo {
+  padding: 0 12px 25px;
+  border-bottom: 1px solid #ffffff25;
+}
+
+.vendor-logo h2 {
+  margin: 0;
+  color: white;
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.vendor-logo span {
+  display: block;
+  margin-top: 5px;
+  color: #c0ded5;
+  font-size: 13px;
+}
+
+.vendor-sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.vendor-menu {
+  padding: 15px;
+  border: none;
+  border-radius: 12px;
+  background: transparent;
+  color: #e0eeeb;
+  text-align: left;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.vendor-menu:hover {
+  background: #ffffff18;
+  transform: translateX(3px);
+}
+
+.vendor-menu.active {
+  background: linear-gradient(100deg, #0aaf65, #00804a);
+  color: white;
+  box-shadow: 0 7px 18px #00a85a35;
+}
+
+.vendor-logout {
+  margin-top: auto;
+  padding: 13px;
+  border: 1px solid #ffffff35;
+  border-radius: 12px;
+  background: #ffffff10;
+  color: white;
+  cursor: pointer;
+}
+
+.vendor-logout:hover {
+  background: #e11d48;
+}
+
+/* Main content */
+.vendor-main {
+  flex: 1;
+  min-width: 0;
+  padding: 35px;
+  overflow-x: hidden;
+}
+
+.vendor-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.vendor-header h1 {
+  margin: 0;
+  font-size: clamp(26px, 3vw, 35px);
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.vendor-header > div:first-child p {
+  margin: 9px 0 0;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.vendor-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.vendor-profile strong,
+.vendor-profile span {
+  display: block;
+}
+
+.vendor-profile strong {
+  font-size: 14px;
+}
+
+.vendor-profile span {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.vendor-avatar {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--green);
+  color: white;
+  font-size: 19px;
+  font-weight: 800;
+}
+
+/* Dashboard statistics */
+.vendor-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+.vendor-stat-card {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  padding: 23px;
+  margin-bottom: 16px;
+  border: 1px solid var(--border);
+  border-radius: 17px;
+  background: white;
+  box-shadow: 0 5px 20px #14213d07;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.vendor-stat-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px #14213d12;
+}
+
+.vendor-stat-card > span {
+  font-size: 30px;
+}
+
+.vendor-stat-card p {
+  margin: 0 0 8px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.vendor-stat-card h2 {
+  margin: 0;
+  font-size: 23px;
+}
+
+/* Content cards */
+.vendor-section {
+  margin-bottom: 25px;
+  padding: 28px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: white;
+  box-shadow: 0 8px 25px #14213d06;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 24px;
+}
+
+.section-title h2 {
+  margin: 0;
+  font-size: 23px;
+}
+
+.section-title p {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* Buttons */
+.vendor-primary-btn,
+.view-all-btn {
+  padding: 13px 20px;
+  border: none;
+  border-radius: 11px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.vendor-primary-btn {
+  background: linear-gradient(110deg, #0aaa61, #00864c);
+  color: white;
+  box-shadow: 0 5px 12px #07965320;
+}
+
+.vendor-primary-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px #07965335;
+}
+
+.vendor-primary-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.view-all-btn {
+  background: #edf6f0;
+  color: var(--green);
+}
+
+.view-all-btn:hover {
+  background: #dff3e6;
+}
+
+/* Empty states */
+.restaurant-empty,
+.orders-empty {
+  padding: 45px 20px;
+  border: 1px dashed #d7e1e8;
+  border-radius: 16px;
+  background: #fbfdfd;
+  text-align: center;
+}
+
+.restaurant-icon {
+  margin-bottom: 15px;
+  font-size: 43px;
+}
+
+.restaurant-empty h2 {
+  margin: 0 0 10px;
+  font-size: 22px;
+}
+
+.restaurant-empty p,
+.orders-empty p {
+  margin: 0 0 22px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.orders-empty span {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 35px;
+}
+
+/* Restaurant form */
+.restaurant-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.restaurant-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  min-width: 0;
+}
+
+.restaurant-form-field label {
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.restaurant-form-field input,
+.restaurant-form-field textarea,
+.restaurant-form-field select {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px 14px;
+  border: 1px solid #d4dce8;
+  border-radius: 11px;
+  background: white;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.restaurant-form-field input {
+  min-height: 46px;
+}
+
+.restaurant-form-field textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.restaurant-form-field input:focus,
+.restaurant-form-field textarea:focus,
+.restaurant-form-field select:focus {
+  border-color: var(--green);
+  box-shadow: 0 0 0 4px #07965318;
+}
+
+.restaurant-form > button[type="submit"] {
+  grid-column: 1 / -1;
+  min-height: 49px;
+}
+
+/* Messages */
+.vendor-main [role="status"] {
+  margin-bottom: 20px;
+  padding: 14px 17px;
+  border: 1px solid #c6ead5;
+  border-radius: 12px;
+  background: #edfff3;
+  color: #087744;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+/* Responsive layout */
+@media (max-width: 1100px) {
+  .vendor-main {
+    padding: 25px;
+  }
+
+  .vendor-sidebar {
+    width: 215px;
+    min-width: 215px;
+  }
+
+  .vendor-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .vendor-sidebar {
+    width: 75px;
+    min-width: 75px;
+    padding: 20px 8px;
+  }
+
+  .vendor-logo {
+    padding: 0 0 18px;
+    text-align: center;
+  }
+
+  .vendor-logo h2 {
+    font-size: 17px;
+  }
+
+  .vendor-logo span {
+    font-size: 10px;
+  }
+
+  .vendor-menu {
+    padding: 13px 5px;
+    text-align: center;
+    font-size: 11px;
+    overflow-wrap: anywhere;
+  }
+
+  .vendor-main {
+    padding: 18px;
+  }
+
+  .vendor-header {
+    align-items: flex-start;
+  }
+
+  .vendor-profile {
+    gap: 7px;
+  }
+
+  .vendor-profile strong {
+    font-size: 11px;
+  }
+
+  .vendor-profile span {
+    font-size: 10px;
+  }
+
+  .vendor-avatar {
+    width: 36px;
+    height: 36px;
+  }
+
+  .vendor-stats {
+    gap: 10px;
+  }
+
+  .vendor-stat-card {
+    padding: 15px;
+    gap: 10px;
+  }
+
+  .vendor-section {
+    padding: 18px;
+  }
+
+  .restaurant-form {
+    grid-template-columns: 1fr;
+    gap: 17px;
+  }
+
+  .section-title {
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .vendor-main {
+    padding: 12px;
+  }
+
+  .vendor-header {
+    flex-direction: column;
+  }
+
+  .vendor-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .section-title {
+    flex-direction: column;
+  }
+}
+/* First-time vendor onboarding */
+.vendor-dashboard.onboarding-only {
+  display: block;
+  min-height: 80vh;
+  padding: 30px;
+  background: #f5f7fb;
+}
+
+.vendor-dashboard.onboarding-only .vendor-sidebar {
+  display: none;
+}
+
+.vendor-dashboard.onboarding-only .vendor-main {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.vendor-dashboard.onboarding-only .vendor-header {
+  display: none;
+}
+/* Simple application-status page for vendors waiting for admin approval */
+.vendor-pending-page {
+  min-height: 75vh;
+  padding: 38px 24px 60px;
+  background: #f5f7fb;
+  color: #172b4d;
+}
+
+.vendor-pending-content {
+  width: min(100%, 1000px);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.vendor-pending-business,
+.vendor-pending-status,
+.vendor-pending-products {
+  background: #fff;
+  border: 1px solid #e4e9f1;
+  border-radius: 14px;
+  padding: 24px 28px;
+  box-shadow: 0 5px 18px rgba(20, 40, 70, 0.04);
+}
+
+.vendor-pending-business h1 {
+  margin: 0 0 22px;
+  font-size: 25px;
+  color: #14264b;
+}
+
+.vendor-pending-business p,
+.vendor-pending-status p,
+.vendor-pending-products p {
+  margin: 6px 0;
+  line-height: 1.6;
+  color: #586b82;
+}
+
+.vendor-pending-label {
+  margin: 0 0 5px !important;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #5c6878 !important;
+}
+
+.vendor-pending-status {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  border-left: 4px solid #e3a34d;
+  background: #fffdf8;
+}
+
+.vendor-pending-status-icon {
+  flex: 0 0 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #fff0d7;
+  font-size: 22px;
+}
+
+.vendor-pending-status h2,
+.vendor-pending-products h2 {
+  margin: 2px 0 7px;
+  font-size: 21px;
+  color: #18345b;
+}
+
+.vendor-pending-products {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.vendor-pending-products button {
+  flex: 0 0 auto;
+  border: 0;
+  border-radius: 8px;
+  padding: 12px 18px;
+  background: #d9e2f1;
+  color: #52647e;
+  font-weight: 700;
+  cursor: not-allowed;
+  opacity: 0.9;
+}
+
+@media (max-width: 650px) {
+  .vendor-pending-page { padding: 24px 14px 40px; }
+  .vendor-pending-business,
+  .vendor-pending-status,
+  .vendor-pending-products { padding: 19px; }
+  .vendor-pending-products { align-items: flex-start; flex-direction: column; }
+}
+/* =====================================
+   YUMORA - RESTAURANT CARDS
+===================================== */
+
+.vendor-restaurant-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.vendor-restaurant-list .vendor-section {
+  position: relative;
+  padding: 24px 28px;
+  margin-bottom: 0;
+  border: 1px solid #e5eaf0;
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 5px 20px rgba(15, 40, 70, 0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.vendor-restaurant-list .vendor-section h2 {
+  margin: 0 0 12px;
+  color: #10234d;
+  font-size: 23px;
+  font-weight: 800;
+}
+
+.vendor-restaurant-list .vendor-section p {
+  margin: 6px 0;
+  color: #475569;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.vendor-restaurant-list .vendor-section button {
+  margin-top: 14px;
+}
+.vendor-restaurant-list .vendor-section:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 35px rgba(15, 40, 70, 0.10);
+}
+
+.vendor-restaurant-list .vendor-section h2 {
+  margin: 0 0 14px;
+  color: #10234d;
+  font-size: 25px;
+  font-weight: 800;
+  letter-spacing: -0.4px;
+}
+
+.vendor-restaurant-list .vendor-section p {
+  margin: 9px 0;
+  color: #475569;
+  font-size: 15px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+/* Manage Food Items button */
+
+.vendor-restaurant-list .vendor-section button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 18px;
+  padding: 13px 22px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(110deg, #0aaa61, #00864c);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 5px 14px rgba(7, 150, 83, 0.18);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.vendor-restaurant-list .vendor-section button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 9px 20px rgba(7, 150, 83, 0.25);
+}
+
+.vendor-restaurant-list .vendor-section button:focus-visible {
+  outline: 3px solid #86efac;
+  outline-offset: 3px;
+}
+
+/* Mobile layout */
+
+@media (max-width: 600px) {
+  .vendor-restaurant-list .vendor-section {
+    padding: 20px;
+  }
+
+  .vendor-restaurant-list .vendor-section h2 {
+    font-size: 21px;
+  }
+
+  .vendor-restaurant-list .vendor-section p {
+    font-size: 14px;
+  }
+
+  .vendor-restaurant-list .vendor-section button {
+    width: 100%;
+  }
+}

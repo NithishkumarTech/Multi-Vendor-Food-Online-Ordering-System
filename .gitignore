@@ -1,0 +1,25 @@
+```gitignore
+# Python
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+
+# Django
+.env
+.env.*
+!.env.example
+staticfiles/
+db.sqlite3
+
+# React / Node.js
+node_modules/
+frontend/node_modules/
+frontend/dist/
+dist/
+
+# Local editor files
+.vscode/
+.DS_Store
+Thumbs.db
+```
